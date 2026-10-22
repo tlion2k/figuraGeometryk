@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 230" width="260" height="230">
+  <!-- Triángulo escaleno con lados a, b, c -->
+  <polygon points="85,15 20,175 240,175" fill="#e3e4fb" stroke="#0000ee" stroke-width="2.5"/>
+  <!-- Altura (referencial) -->
+  <line x1="85" y1="15" x2="85" y2="175" stroke="#e00000" stroke-width="1.5" stroke-dasharray="3,3"/>
+  <text x="90" y="105" font-family="Arial" font-size="15" fill="#e00000">h</text>
+  <text x="34" y="95" font-family="Arial" font-size="16" fill="#0000ee">a</text>
+  <text x="170" y="90" font-family="Arial" font-size="16" fill="#0000ee">c</text>
+  <text x="125" y="195" font-family="Arial" font-size="16" fill="#0000ee">b</text>
+  <!-- Fórmula del perímetro -->
+  <text x="20" y="224" font-family="Times New Roman" font-size="22" font-style="italic" font-weight="bold" fill="#000">p = a + b + c</text>
+</svg>

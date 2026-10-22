@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <!-- Circunferencia (perímetro) -->
+  <circle cx="100" cy="105" r="80" fill="none" stroke="#f26b1d" stroke-width="3"/>
+  <!-- Diámetro -->
+  <line x1="20" y1="105" x2="180" y2="105" stroke="#1f3fa6" stroke-width="3"/>
+  <!-- Radio -->
+  <line x1="100" y1="105" x2="157" y2="48" stroke="#18a058" stroke-width="3"/>
+  <text x="118" y="68" font-family="Arial" font-size="20" font-weight="bold" fill="#000">r</text>
+  <text x="94" y="130" font-family="Times New Roman" font-size="20" font-style="italic" fill="#000">d</text>
+  <text x="2" y="20" font-family="Times New Roman" font-size="22" font-style="italic" font-weight="bold" fill="#000">P</text>
+</svg>
