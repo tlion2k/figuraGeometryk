@@ -1,0 +1,7 @@
+{
+  "name": "figuras-geometricas",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}
