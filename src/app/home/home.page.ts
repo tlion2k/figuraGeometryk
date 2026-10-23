@@ -16,6 +16,7 @@ export class HomePage {
 
   constructor() {}
 
+  // guarda la figura elegida en el selector
   onFigureChange(event: any) {
     this.selectedFigure = event.detail.value;
     console.log('Selected figure:', this.selectedFigure);

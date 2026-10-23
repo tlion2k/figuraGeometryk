@@ -32,7 +32,7 @@ export class TrianguloComponent implements OnInit {
     this.perimetroTriangulo = null;
     this.mensajeError = '';
 
-    // validaciones
+    // los tres lados deben existir y ser positivos
     if (
       !this.ladoA || !this.ladoB || !this.ladoC ||
       this.ladoA <= 0 || this.ladoB <= 0 || this.ladoC <= 0
@@ -41,28 +41,31 @@ export class TrianguloComponent implements OnInit {
       return;
     }
 
+    // convierte a número (el input puede entregar texto)
     const a = Number(this.ladoA);
     const b = Number(this.ladoB);
     const c = Number(this.ladoC);
 
-    // VALIDACION DE TRIÁNGULO ESCALENO
+    // desigualdad triangular
     if (a + b <= c || a + c <= b || b + c <= a) {
       this.mensajeError = 'Esas medidas no forman un triángulo.';
       return;
     }
 
-    // VALIDACION DE TRIÁNGULO EQUILÁTERO O ISÓSCELES
+    // descarta equilátero e isósceles (lados repetidos)
     if (a === b || b === c || a === c) {
       this.mensajeError =
         'En un triángulo escaleno los tres lados deben ser distintos.';
       return;
     }
 
+    // el cálculo vive en el modelo
     const triangulo = new TrianguloEscaleno(a, b, c);
     this.perimetroTriangulo = triangulo.calcularPerimetro();
   }
 
 
+  // oculta resultado y error cuando el usuario edita un lado
   limpiarResultado() {
     this.perimetroTriangulo = null;
     this.mensajeError = '';

@@ -6,6 +6,7 @@ export abstract class FiguraGeometrica {
     this.nombre = nombre;
   }
 
+  // cada figura define su propio cálculo (polimorfismo)
   public abstract calcularPerimetro(): number;
 
   public getNombre(): string {
@@ -23,6 +24,7 @@ export class Circulo extends FiguraGeometrica {
   }
 
   public calcularPerimetro(): number {
+    // P = 2πr, redondeado a 2 decimales
     const perimetro = 2 * Math.PI * this.radio;
     return parseFloat(perimetro.toFixed(2));
   }
@@ -42,12 +44,14 @@ export class TrianguloEscaleno extends FiguraGeometrica {
   }
 
   public calcularPerimetro(): number {
+    // P = suma de los tres lados
     return this.ladoA + this.ladoB + this.ladoC;
   }
 }
 
 // NIETO
 export class TrianguloEquilatero extends TrianguloEscaleno {
+  // los tres lados son iguales
   constructor(ladoA: number) {
     super(ladoA, ladoA, ladoA);
   }
