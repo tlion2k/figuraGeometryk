@@ -1,3 +1,4 @@
+<!-- TEORÍA: definición, fórmula y gráfico -->
 <ion-card>
   <ion-card-header>
     <ion-card-title>Círculo</ion-card-title>
@@ -32,6 +33,7 @@
 </ion-card>
 
 
+<!-- ENTRADA: ngModel enlaza el radio; al escribir se borra el resultado -->
 <form>
   <ion-list class="ion-no-margin ion-no-padding">
     <ion-item>
@@ -47,10 +49,12 @@
     <ion-button (click)="onCalcularPerimetro()">CALCULAR PERÍMETRO</ion-button>
   </ion-item>
 
+  <!-- resultado: solo si ya se calculó -->
   <ion-item *ngIf="perimetroCirculo !== null">
     <ion-text>El perímetro es: {{ perimetroCirculo }} cm</ion-text>
   </ion-item>
 
+  <!-- error: solo si la validación falló -->
   <ion-item *ngIf="mensajeError">
     <ion-text color="danger">{{ mensajeError }}</ion-text>
   </ion-item>
