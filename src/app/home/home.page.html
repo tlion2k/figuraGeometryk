@@ -1,20 +1,29 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
+    <ion-title>Daniel Cid B.</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <ion-list>
+    <!-- selector: dispara onFigureChange al elegir -->
+    <ion-item>
+      <ion-select
+        label="Figuras Geométricas"
+        placeholder="Escoja una figura geométrica"
+        (ionChange)="onFigureChange($event)"
+      >
+        <ion-select-option value="circle">Círculo</ion-select-option>
+        <ion-select-option value="triangle">Triángulo</ion-select-option>
+      </ion-select>
+    </ion-item>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+    <!-- solo se muestra el componente de la figura elegida -->
+    <!-- CÍRCULO -->
+    <app-circulo *ngIf="selectedFigure === 'circle'"></app-circulo>
+
+    <!-- TRIÁNGULO -->
+    <app-triangulo *ngIf="selectedFigure === 'triangle'"></app-triangulo>
+
+  </ion-list>
 </ion-content>
