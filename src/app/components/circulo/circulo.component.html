@@ -1,3 +1,57 @@
-<p>
-  circulo works!
-</p>
+<ion-card>
+  <ion-card-header>
+    <ion-card-title>Círculo</ion-card-title>
+    <ion-card-subtitle>Perímetro</ion-card-subtitle>
+  </ion-card-header>
+
+  <ion-card-content>
+    El perímetro de un círculo es la longitud de la línea que forma su
+    borde.
+  </ion-card-content>
+
+  <ion-grid [fixed]="true">
+    <ion-row>
+      <ion-col>
+        <ion-text color="danger">
+          Donde <br />
+          <strong>P:</strong> perímetro <br />
+          <strong>d:</strong> diámetro <br />
+          <strong>r:</strong> radio del círculo <br />
+          <strong>π:</strong> 3.1416
+        </ion-text>
+      </ion-col>
+      <ion-col>
+        <ion-img
+          class="imagen-circulo"
+          src="assets/images/circulo.svg"
+          alt="perimetro_circulo"
+        ></ion-img>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-card>
+
+
+<form>
+  <ion-list class="ion-no-margin ion-no-padding">
+    <ion-item>
+      <ion-input label="Radio (cm)" labelPlacement="stacked" type="number"
+        name="radio" [(ngModel)]="radio" (ionInput)="limpiarResultado()"></ion-input>
+    </ion-item>
+  </ion-list>
+</form>
+
+<!-- BOTÓN Y RESULTADO -->
+<ion-list lines="none" class="ion-no-margin ion-no-padding">
+  <ion-item>
+    <ion-button (click)="onCalcularPerimetro()">CALCULAR PERÍMETRO</ion-button>
+  </ion-item>
+
+  <ion-item *ngIf="perimetroCirculo !== null">
+    <ion-text>El perímetro es: {{ perimetroCirculo }} cm</ion-text>
+  </ion-item>
+
+  <ion-item *ngIf="mensajeError">
+    <ion-text color="danger">{{ mensajeError }}</ion-text>
+  </ion-item>
+</ion-list>

@@ -1,12 +1,24 @@
 import { Component } from '@angular/core';
-import { IonHeader, IonToolbar, IonTitle, IonContent } from '@ionic/angular';
+import { CirculoComponent } from '../components/circulo/circulo.component';
+import { TrianguloComponent } from '../components/triangulo/triangulo.component';
+import { NgIf } from '@angular/common';
+import { IonicModule } from '@ionic/angular/lazy';
 
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
   styleUrls: ['home.page.scss'],
-  imports: [IonHeader, IonToolbar, IonTitle, IonContent],
+  standalone: true,
+  imports: [CirculoComponent, TrianguloComponent, NgIf, IonicModule],
 })
 export class HomePage {
+  selectedFigure: string = '';
+
   constructor() {}
+
+  onFigureChange(event: any) {
+    this.selectedFigure = event.detail.value;
+    console.log('Selected figure:', this.selectedFigure);
+  }
+
 }
